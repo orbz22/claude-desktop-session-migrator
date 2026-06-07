@@ -1,0 +1,4 @@
+# No external dependencies required for the script itself.
+# Requires Python 3.8+
+# Optional: pyinstaller (for building the .exe)
+pyinstaller>=6.0.0

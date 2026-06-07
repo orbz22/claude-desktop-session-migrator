@@ -22,11 +22,6 @@ This tool acts as a bridge, mapping those cryptic IDs to your email addresses an
 
 ---
 
-## 📸 Preview
-*(Add a screenshot here once you run the app!)*
-
----
-
 ## 🛠️ Installation
 
 ### Option 1: Run from Source (Recommended for Devs)
@@ -64,14 +59,23 @@ This tool acts as a bridge, mapping those cryptic IDs to your email addresses an
 
 ## ❓ FAQ
 
-**Q: Does this sync my regular chats?**  
-A: No. Regular chats are cloud-synced by Anthropic. This tool is specifically for **Code Sessions** and **Agent/Cowork** sessions that are stored locally.
+### **Q: Does this sync my regular chats?**  
+**A:** No. Regular chats are cloud-synced by Anthropic. This tool is specifically for **Code Sessions** and **Agent/Cowork** sessions that are stored locally.
 
-**Q: Will this delete my old chats?**  
-A: Never. The tool uses `shutil.copy2`, which creates a duplicate. Your original files remain untouched.
+### **Q: Is this a "Copy" or a "Move"?**  
+**A:** It is a **Copy**. Your original account folder remains exactly as it was. The tool duplicates the history into the new account's folder.
 
-**Q: Can I merge two accounts permanently?**  
-A: This tool performs a "snapshot" copy. If you send new messages in Account A, you'll need to run the tool again to see them in Account B.
+### **Q: If I chat in my new account, will the messages appear in my old account?**  
+**A:** Not automatically. If you want to keep them in sync, you need to run the tool again but swap the selection (**Source:** New Account → **Destination:** Old Account).
+
+### **Q: What happens if a session exists in both accounts?**  
+**A:** The tool will **overwrite/update** the file in the Destination with the version from the Source. This is helpful for updating a chat with the latest progress you've made.
+
+### **Q: What is "Cowork"?**  
+**A:** "Cowork" is the internal technical name for Claude's "Agent Mode" and "Code Sessions." If you see folders or logs with this name, that's what this tool is migrating.
+
+### **Q: The tool shows "Unknown Account", what do I do?**  
+**A:** Claude logs identities when you log in. If you just logged in, click **"Refresh Lists"**. If it still shows "Unknown," check the UUID (the random ID in parentheses) to identify your folder.
 
 ---
 
